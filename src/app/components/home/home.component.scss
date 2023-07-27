@@ -4,8 +4,6 @@
   color: #fff;
 }
 
-
-
 .card {
   background-color: #202020;
   border: none;
@@ -19,9 +17,7 @@
     filter: brightness(120%) sepia(1) hue-rotate(-50deg);
   }
   @media (max-width: 576px) {
-    // En pantallas extra pequeñas
-    margin: 0 5px; // reduce el margen a la izquierda y derecha
-  }
+    margin: 0 5px;
 }
 
 .card-img-top {
@@ -84,5 +80,32 @@
 .card-container {
   padding: 20px !important;
   margin: 0 20px;
+}
 
+.pagination-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  color: #fff !important;
+  background-color: #3f51b5;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 150px;
+  text-align: center;
+
+  &:hover {
+    background-color: #fff;
+    color: #3f51b5;
+  }
 }
