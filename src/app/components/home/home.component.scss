@@ -41,14 +41,13 @@
     .card-text {
       font-weight: 400;
       display: -webkit-box;
-      -webkit-line-clamp: 3; // Cambia este número para ajustar el número de líneas
+      -webkit-line-clamp: 3; // ajustar el número de líneas
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .card-link {
-      // Añade estilos para el botón "Ver más"
       color: #fff !important;
       background-color: #3f51b5;
       border: none;
@@ -74,7 +73,7 @@
       max-width: 1200px;
     }
   }
-  
+
 }
 
 .card-container {
@@ -108,4 +107,18 @@
     background-color: #fff;
     color: #3f51b5;
   }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.genre-tag {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
 }

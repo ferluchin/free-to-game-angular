@@ -1,18 +1,47 @@
-// filename: filter-games.component.scss
 .filter-games-component {
+  background-color: #222;
+  color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+
   .filter-games-form {
-    padding: 0 15px; // agrega un espacio vacío pequeño a la izquierda y derecha
     display: flex;
     flex-direction: column;
-    justify-content: center; // centra los campos de búsqueda
+    justify-content: center;
     align-items: center;
 
     .form-group {
       margin-bottom: 1rem;
-      width: 100%; // se adapta a la pantalla
+      width: 100%;
 
-      @media (min-width: 768px) { // Medium devices and up
-        width: auto; // tamaño original en pantallas más grandes
+      @media (min-width: 768px) {
+        width: auto;
+      }
+    }
+
+    .form-control {
+      background-color: #333;
+      border: none;
+      color: #fff;
+
+      &::placeholder {
+        color: #ccc;
+      }
+
+      &:focus {
+        background-color: #444;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+
+      &:hover {
+        background-color: #0056b3;
       }
     }
 

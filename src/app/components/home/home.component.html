@@ -1,5 +1,4 @@
 <!-- home.component.html -->
-<!-- <div class="home"> -->
 
 <div class="card-container">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -7,7 +6,10 @@
       <div class="card h-100">
         <img [src]="game.thumbnail" class="card-img-top" alt="{{ game.title }}">
         <div class="card-body">
-          <h5 class="card-title">{{ game.title }}</h5>
+          <div class="card-header">
+            <h5 class="card-title">{{ game.title }}</h5>
+            <span class="genre-tag">{{ game.genre }}</span>
+          </div>
           <p class="card-text">{{ game.short_description }}</p>
           <a href="details/{{game.id}}" class="stretched-link card-link">Ver mas</a>
         </div>
@@ -23,4 +25,3 @@
 </div>
 
 
-<!-- </div> -->
