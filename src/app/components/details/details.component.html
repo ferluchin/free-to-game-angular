@@ -1,1 +1,16 @@
-<p>details works!</p>
+<div *ngIf="game" class="details-wrapper">
+  <div class="game-banner">
+    <img class="game-banner-img" [src]="game.thumbnail">
+  </div>
+  <div class="game-content">
+    <div class="game-header">
+      <h2 class="game-header-title">{{ game.title }}</h2>
+    </div>
+    <p class="game-content-genres">Genero: {{ game.genre }}</p>
+    <p class="game-content-platform">Plataforma: {{ game.platform }}</p>
+    <p class="game-content-description">Descripcion: {{ game.short_description }}</p>
+    <p class="game-content-url">Url del game: <a class="game-link" [href]="game.game_url"
+        target="_blank">{{game.game_url}}</a></p>
+    <button (click)="goBack()" class="game-link">Volver</button>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+.details-wrapper {
+  margin: 20px auto;
+  position: relative;
+  background-color: #202020;
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.game {
+  &-banner {
+    width: 100%;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+
+  &-content {
+    text-align: center;
+    padding-top: 20px;
+
+    &-genres,
+    &-platform,
+    &-description,
+    &-url {
+      margin-bottom: 15px;
+    }
+  }
+
+  &-header {
+    &-title {
+      font-size: 24px;
+      color: #fff;
+      font-weight: 700;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &-link {
+    color: #fff;
+    background-color: #3f51b5;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+
+    &:hover {
+      background-color: #fff;
+      color: #3f51b5;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .details-wrapper {
+    max-width: 540px;
+  }
+
+  .game {
+    &-header {
+      &-title {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .details-wrapper {
+    max-width: 720px;
+  }
+
+  .game {
+    &-header {
+      &-title {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .details-wrapper {
+    max-width: 960px;
+  }
+
+  .game {
+    &-header {
+      &-title {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .details-wrapper {
+    max-width: 1140px;
+  }
+
+  .game {
+    &-header {
+      &-title {
+        font-size: 60px;
+      }
+    }
+  }
+}
