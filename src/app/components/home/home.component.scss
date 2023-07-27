@@ -1,98 +1,77 @@
-.filters {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding-left: 20px;
+body {
+  background-color: #151515;
+  color: #fff;
 }
 
-.form-group {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-
-  select {
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.col-md-4 {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+.container {
+  padding: 20px;
 }
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
+  background-color: #202020;
+  border: none;
+  color: #fff;
+  border-radius: 15px;
 
   &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(-3px);
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    filter: brightness(120%) sepia(1) hue-rotate(-50deg);
+  }
+}
+
+.card-img-top {
+  height: 172px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-body {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .card-text {
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // Cambia este número para ajustar el número de líneas
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  img {
-    max-width: 100%;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
+  .card-link {
+    // Añade estilos para el botón "Ver más"
+    color: #fff;
+    background-color: #3f51b5;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+
+    &:hover {
+      background-color: #fff;
+      color: #3f51b5;
+    }
   }
+}
 
-  .card-body {
-    flex: 1 1 auto;
-    padding: 1.25rem;
-
-    .card-text {
-      margin-bottom: 1.25rem;
-    }
-
-    .card-title {
-      margin-bottom: 0.75rem;
-    }
-
-    .game-platforms {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-
-      img {
-        width: 30px;
-        height: 30px;
-        object-fit: cover;
-        margin-right: 10px;
-      }
-    }
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
   }
 }

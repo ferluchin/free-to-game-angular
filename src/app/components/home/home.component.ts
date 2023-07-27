@@ -3,11 +3,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { APIResponse, Game } from 'src/app/models';
+import { Game } from './../../models';
+// import { APIResponse, Game } from 'src/app/models';
 //import { APIResponse, Game } from '../models';
-import { HttpService } from 'src/app/services/http.service';
+//import { HttpService } from 'src/app/services/http.service';
 //import { HttpService } from '../services/http.service';
 
+import { GameService } from './../../services/http.service';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -16,28 +18,34 @@ import { ViewEncapsulation } from '@angular/core';
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   public sort: string = '';
   public games: Array<Game> = [];
   private routeSub!: Subscription;
   private gameSub!: Subscription;
 
   constructor(
-    private httpService: HttpService,
+    private gameService: GameService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      if (params['game-search']) {
-        this.searchGames('metacrit', params['game-search']);
-      } else {
-        this.searchGames('metacrit');
-      }
-    });
-  }
 
+    this.gameService.getGames().subscribe((games) => {
+      this.games = games;
+      console.log(games);
+    });
+
+    // this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+    //   if (params['game-search']) {
+    //     this.searchGames('metacrit', params['game-search']);
+    //   } else {
+    //     this.searchGames('metacrit');
+    //   }
+    // });
+  }
+/*
   searchGames(sort: string, search?: string): void {
     this.gameSub = this.httpService
       .getGameList(sort, search)
@@ -59,4 +67,5 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.routeSub.unsubscribe();
     }
   }
+  */
 }

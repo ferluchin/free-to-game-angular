@@ -1,8 +1,10 @@
-<div class="search-container d-flex align-items-center position-fixed w-100">
-  <form class="search-form w-100 mx-auto" #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <span class="logo text-decoration-none fw-bold cursor-pointer" routerLink="/"> VIDEO GAME DATABASE </span>
-    <input class="search-input border-0 outline-0 px-2 mx-2" name="search" ngModel
+<div class="search-container position-fixed w-100 d-flex justify-content-center">
+  <form class="search-form w-75 d-flex justify-content-between align-items-center" #form="ngForm"
+    (ngSubmit)="onSubmit(form)">
+    <span class="logo text-decoration-none fw-bold cursor-pointer" routerLink="/"> VIDEO GAME DB </span>
+    <input class="search-input border-0 outline-0 px-2 mx-2 rounded-pill" name="search" ngModel
       placeholder="Buscar en más de 500.000 juegos" />
-    <button class="search-button border-0 outline-0 px-2 mx-2 fw-bold bg-primary text-white">Search</button>
+    <button
+      class="search-button border-0 outline-0 px-2 mx-2 fw-bold bg-primary text-white rounded-pill">Search</button>
   </form>
 </div>

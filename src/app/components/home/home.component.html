@@ -1,30 +1,13 @@
-<div class="filters">
-  <div class="form-group">
-    <label for="sort">Sort</label>
-    <select class="form-control" id="sort" [(ngModel)]="sort" (change)="searchGames(sort)">
-      <option value="name">Name</option>
-      <option value="-released">Released</option>
-      <option value="-added">Added</option>
-      <option value="-created">Created</option>
-      <option value="-updated">Updated</option>
-      <option value="-rating">Rating</option>
-      <option value="metacritic">Metacritic</option>
-    </select>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-4" *ngFor="let game of games">
-    <div class="card" (click)="openGameDetails(game.id)">
-      <img *ngIf="game.background_image" src="{{ game.background_image }}" alt="thumbnail" class="card-img-top" />
-      <div *ngIf="!game.background_image" class="card-body">
-        <p class="card-text">No image</p>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{ game.name }}</h5>
-        <div class="game-platforms">
-          <img *ngFor="let gamePlatform of game.parent_platforms" class="game-platforms"
-            src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg" alt="{{ gamePlatform.platform.slug }}" />
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" *ngFor="let game of games">
+      <div class="card h-100">
+        <img [src]="game.thumbnail" class="card-img-top" alt="{{ game.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ game.title }}</h5>
+          <p class="card-text">{{ game.short_description }}</p>
+          <a href="games/{{game.id}}" class="stretched-link card-link">Ver mas</a>
         </div>
       </div>
     </div>

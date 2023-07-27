@@ -1,22 +1,21 @@
 .search-container {
-  width: 100%;
+  // Removed flex-related styles as they are handled by Bootstrap classes
   height: 60px;
   background-color: #050505;
   z-index: 4;
 }
 
 .logo {
-  margin-left: 10px;
   color: #fff;
   font-weight: 700;
-  cursor: pointer;
   text-decoration: none;
 }
 
 .search-input {
-  margin-left: 10px;
+  // The rounded style is handled by Bootstrap classes
   padding: 10px;
   width: 300px;
+  border: 1px solid #ddd;
 }
 
 .search-button {
