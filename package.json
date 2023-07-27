@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production && npx copyfiles -u 1 src/_redirects dist/free-to-game-angular",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

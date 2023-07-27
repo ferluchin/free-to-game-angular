@@ -40,7 +40,7 @@ El código de la aplicación sigue las siguientes prácticas:
 
 ## Demostración
 
-Para ver la aplicación en acción, visita el siguiente enlace: [Enlace a Netlify (pendiente de actualizar)](https://tusitio.netlify.app)
+Para ver la aplicación en acción, visita el siguiente enlace: [Live Version](https://free-to-game-api.netlify.app/)
 
 ## Contribuciones
 
