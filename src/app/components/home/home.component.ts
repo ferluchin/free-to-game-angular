@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
   previousPage() {
     if (this.currentPage > 0) {
       this.currentPage--;
+      this.filterGames();
     }
-    this.filterGames();
   }
 }

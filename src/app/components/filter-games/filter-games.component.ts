@@ -1,3 +1,4 @@
+// filename: filter-games.component.ts
 import { Component, OnInit } from '@angular/core';
 import { GameService } from 'src/app/services/http.service';
 
