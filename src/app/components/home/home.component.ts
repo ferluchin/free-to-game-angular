@@ -1,14 +1,5 @@
-// Filename: home.component.ts
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-
+import { Component, OnInit } from '@angular/core';
 import { Game } from './../../models';
-// import { APIResponse, Game } from 'src/app/models';
-//import { APIResponse, Game } from '../models';
-//import { HttpService } from 'src/app/services/http.service';
-//import { HttpService } from '../services/http.service';
-
 import { GameService } from './../../services/http.service';
 import { ViewEncapsulation } from '@angular/core';
 
@@ -16,56 +7,52 @@ import { ViewEncapsulation } from '@angular/core';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class HomeComponent implements OnInit {
-  public sort: string = '';
-  public games: Array<Game> = [];
-  private routeSub!: Subscription;
-  private gameSub!: Subscription;
+  nombreJuego: string = '';
+  generoJuego: string = '';
+  plataformaJuego: string = '';
 
-  constructor(
-    private gameService: GameService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  public games: Array<Game> = [];
+  public gamesFiltered: Array<Game> = [];
+
+  constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
-
     this.gameService.getGames().subscribe((games) => {
       this.games = games;
-      console.log(games);
+      this.filterGames();
     });
 
-    // this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-    //   if (params['game-search']) {
-    //     this.searchGames('metacrit', params['game-search']);
-    //   } else {
-    //     this.searchGames('metacrit');
-    //   }
-    // });
-  }
-/*
-  searchGames(sort: string, search?: string): void {
-    this.gameSub = this.httpService
-      .getGameList(sort, search)
-      .subscribe((gameList: APIResponse<Game>) => {
-        this.games = gameList.results;
-        console.log(gameList);
-      });
+    // Escuchamos los cambios en los filtros
+    this.gameService.gameFilters$.subscribe((filters) => {
+      this.nombreJuego = filters.nombreJuego;
+      this.generoJuego = filters.generoJuego;
+      this.plataformaJuego = filters.plataformaJuego;
+      this.filterGames();
+    });
   }
 
-  openGameDetails(id: string): void {
-    this.router.navigate(['details', id]);
+  filterGames() {
+    this.gamesFiltered = this.games.filter((juego) => {
+      let cumpleFiltro = true;
+      if (this.nombreJuego) {
+        cumpleFiltro =
+          cumpleFiltro &&
+          juego.title.toLowerCase().includes(this.nombreJuego.toLowerCase());
+      }
+      if (this.generoJuego) {
+        cumpleFiltro =
+          cumpleFiltro &&
+          juego.genre.toLowerCase() === this.generoJuego.toLowerCase();
+      }
+      if (this.plataformaJuego) {
+        cumpleFiltro =
+          cumpleFiltro &&
+          juego.platform.toLowerCase() === this.plataformaJuego.toLowerCase();
+      }
+      return cumpleFiltro;
+    });
   }
-
-  ngOnDestroy(): void {
-    if (this.gameSub) {
-      this.gameSub.unsubscribe();
-    }
-    if (this.routeSub) {
-      this.routeSub.unsubscribe();
-    }
-  }
-  */
 }

@@ -1,22 +1,26 @@
-body {
+// // home.component.scss
+.card-container {
   background-color: #151515;
   color: #fff;
 }
 
-.container {
-  padding: 20px;
-}
+
 
 .card {
   background-color: #202020;
   border: none;
   color: #fff;
   border-radius: 15px;
+  // margin: 0 10px;
 
   &:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(-3px);
     filter: brightness(120%) sepia(1) hue-rotate(-50deg);
+  }
+  @media (max-width: 576px) {
+    // En pantallas extra pequeñas
+    margin: 0 5px; // reduce el margen a la izquierda y derecha
   }
 }
 
@@ -50,7 +54,7 @@ body {
 
   .card-link {
     // Añade estilos para el botón "Ver más"
-    color: #fff;
+    color: #fff !important;
     background-color: #3f51b5;
     border: none;
     padding: 10px;
@@ -74,4 +78,11 @@ body {
   .container {
     max-width: 1200px;
   }
+}
+// }
+
+.card-container {
+  padding: 20px !important;
+  margin: 0 20px;
+
 }

@@ -11,13 +11,15 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FilterGamesComponent } from './components/filter-games/filter-games.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     DetailsComponent,
     HomeComponent,
-    GameTabsComponent
+    GameTabsComponent,
+    FilterGamesComponent
   ],
   imports: [
     BrowserModule,

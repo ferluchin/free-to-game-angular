@@ -1,0 +1,24 @@
+<div class="filter-games-component">
+  <form class="filter-games-form">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombreJuego" placeholder="Buscar por nombre">
+      </div>
+      <div class="form-group col-md-4">
+        <select class="form-control" [(ngModel)]="generoJuego" name="genero">
+          <option value="">Todos los géneros</option>
+          <option *ngFor="let genero of generos" [value]="genero">{{ genero }}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <select class="form-control" [(ngModel)]="plataformaJuego" name="plataforma">
+          <option value="">Todas las plataformas</option>
+          <option *ngFor="let plataforma of plataformas" [value]="plataforma">{{ plataforma }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-12 pt-3 pb-3">
+      <button class="btn btn-primary" (click)="filtrarJuegos()">Filtrar</button>
+    </div>
+  </form>
+</div>

@@ -1,3 +1,5 @@
+// filename: details.component.ts
+
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from 'src/app/services/http.service';
@@ -24,8 +26,15 @@ export class DetailsComponent implements OnInit {
 
   getGame(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.gameService.getGameById(id).subscribe((game) => (this.game = game));
+    this.gameService.getGameById(id).subscribe(
+      (game) => (this.game = game),
+      (error) => console.error(error)
+    );
   }
+  // getGame(): void {
+  //   const id = Number(this.route.snapshot.paramMap.get('id'));
+  //   this.gameService.getGameById(id).subscribe((game) => (this.game = game));
+  // }
 
   goBack(): void {
     this.location.back();
