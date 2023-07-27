@@ -1,5 +1,6 @@
 # Video Game Database - FreeToGame API
 
+![Video Game DB](https://github.com/ferluchin/free-to-game-angular/blob/main/assets/6580338/5d4c45fa-8339-4cd9-a352-96c3be06607e.png)
 Esta es una aplicación en Angular que consume la API de [FreeToGame](https://www.freetogame.com/api-doc) para mostrar información de videojuegos. Esta aplicación permite listar juegos, filtrarlos por nombre, género y plataforma, y muestra información detallada de cada juego.
 
 ## Características principales
